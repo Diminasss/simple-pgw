@@ -137,3 +137,27 @@
 - **Зависимости**:
     - Boost.Asio (версия 1.87, загружается автоматически через CMake).
     - GoogleTest (версия 1.17.0, загружается автоматически через CMake).
+
+## Работа тестов
+```bash
+diminas@diminas-G5-ME:~/CLionProjects/simple-pgw/cmake-build-release/test$ ./simple_pgw_tests 
+Running main() from /home/diminas/CLionProjects/simple-pgw/cmake-build-release/_deps/googletest-src/googletest/src/gtest_main.cc
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from data_plane_test
+[ RUN      ] data_plane_test.handle_downlink_for_pdn
+[       OK ] data_plane_test.handle_downlink_for_pdn (0 ms)
+[ RUN      ] data_plane_test.handle_uplink_for_default_bearer
+[       OK ] data_plane_test.handle_uplink_for_default_bearer (0 ms)
+[ RUN      ] data_plane_test.handle_uplink_for_dedicated_bearer
+[       OK ] data_plane_test.handle_uplink_for_dedicated_bearer (0 ms)
+[ RUN      ] data_plane_test.didnt_handle_uplink_for_unknown_bearer
+[       OK ] data_plane_test.didnt_handle_uplink_for_unknown_bearer (0 ms)
+[ RUN      ] data_plane_test.didnt_handle_downlink_for_unknown_ue_ip
+[       OK ] data_plane_test.didnt_handle_downlink_for_unknown_ue_ip (0 ms)
+[----------] 5 tests from data_plane_test (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 5 tests.
+```
