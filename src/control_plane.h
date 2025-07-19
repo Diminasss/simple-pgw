@@ -29,4 +29,7 @@ private:
     std::unordered_map<boost::asio::ip::address_v4, std::shared_ptr<pdn_connection>> _pdns_by_ue_ip_addr;
     std::unordered_map<uint32_t, std::shared_ptr<bearer>> _bearers;
     std::unordered_map<std::string, boost::asio::ip::address_v4> _apns;
+    uint32_t _next_cp_teid = 1;
+    uint32_t _next_dp_teid = 1;
+    boost::asio::ip::address_v4 _next_ue_ip = boost::asio::ip::make_address_v4("10.0.0.1");
 };
